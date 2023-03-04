@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@700&family=Inconsolata:wght@200;300;400;500;600;700;800;900&family=Jomhuria&family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Lobster&family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Qwitcher+Grypen:wght@400;700&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;1,500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+
+}
+body {
+    font-family: 'Lobster', cursive;
+    overflow-x: hidden;
+}
+.project {
+    overflow-x: hidden;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    user-select: none;
+}
+
+.present {
+    transform: translate(60% ,500px);
+    width: 500px;
+    height: 300px;
+    background-color: #e9c46a;
+    position: relative;
+    left: 50px;
+    cursor: pointer;
+}
+.present::before{
+    content: "";
+    background-color: rgba(0, 0, 0, 20%);
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    z-index: 10;
+}
+.present::after {
+    content: "";
+    width: 50px;
+    height: 100%;
+    background-color: #e76f51;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.cover {
+    width: 550px;
+    height: 100px;
+    background-color: #e9c46a;
+    position: relative;
+    top: -100px;
+    left: -25px;
+    transform: translateY(-0px);
+    transform: rotate(0deg);
+    transition:  0.6s;
+}
+
+.present:hover .cover {
+    top: -350px;
+    left: -270px;
+  transform: rotate(-80deg);
+}
+.present:hover.present .text {
+    top: -250px;
+    opacity: 1;
+} 
+
+.cover::before {
+    content: "";
+    width: 50px;
+    height: 100%;
+    background-color: #e76f51;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.cover::after{
+    content: "";
+    background-color: #e76f51;
+    width: 100px;
+    height: 70px;
+    position: absolute;
+    top: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.cover span {
+    display: block;
+    position: absolute;
+    top:-70px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 50px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+    z-index: 50;
+}
+ .present .text {
+    text-align: center;
+    position: absolute;
+    z-index: -999;
+    top: 50px;
+    left: 90px;
+    letter-spacing: 5px;
+    color: white;
+    font-size: 50px;
+    opacity: 0;
+    transition: 0.6s;
+ }
+ audio {
+    position: relative;
+    z-index: -100;
+ }
+ @media (min-width:300px) and (max-width:767px) {
+    .present {
+        transform: translate(40px,300px);
+        width: 200px;
+        height: 120px;
+        left: 50px;
+    }
+    .present::before{
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 20px;
+    }
+    .present::after {
+        width: 50px;
+        height: 100%;
+    }
+    .cover {
+        width: 220px;
+        height: 30px;
+        top: -30px;
+        left: -9px;
+    }
+    .cover::before {
+        width: 20px;
+    }
+    .cover::after{
+        width: 60px;
+        height: 40px;
+        top: -40px;
+    }
+    .cover span {
+        display: block;
+        position: absolute;
+        top:-42px;
+        border-width: 32px;
+    }
+    .present .text {
+        text-align: center;
+        top: 50px;
+        left: 30px;
+        font-size: 30px;
+     }
+
+     .present:hover .cover {
+        top: -150px;
+        left: -110px;
+    }
+    .present:hover.present .text {
+        top: -150px;
+    } 
+    
+ }
